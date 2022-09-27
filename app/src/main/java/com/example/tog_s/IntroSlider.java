@@ -12,19 +12,33 @@ import com.github.appintro.AppIntroFragment;
 
 
 public class IntroSlider extends AppIntro {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addSlide(AppIntroFragment.createInstance("C++", "C++ Self Paced Course",
-                R.drawable.img1, R.color.white, R.color.black,R.color.black));
+        addSlide(AppIntroFragment.createInstance("Scan & Go", "Just scan QR code to mark attendence",
+                R.drawable.img1, R.color.white,R.color.black,R.color.black));
 
-        addSlide(AppIntroFragment.createInstance("DSA", "Data Structures and Algorithms", R.drawable.img2,
-                R.color.white, R.color.purple_200,R.color.black));
+        addSlide(AppIntroFragment.createInstance("Raise Funds", "Donate & keep track of your payments online",
+                R.drawable.img3,
+                R.color.slide2, R.color.black,R.color.black));
 
-        addSlide(AppIntroFragment.createInstance("Java", "Java Self Paced Course", R.drawable.img3,
-                R.color.white, R.color.purple_200,R.color.black));
+        addSlide(AppIntroFragment.createInstance("Interact with your NGOs", "All your solutions in one app", R.drawable.img2,
+                R.color.slide1, R.color.black,R.color.black));
+
+        setColorTransitionsEnabled(true);
+        int color = R.color.black;
+        setColorDoneText(getResources().getColor(color));
+        setColorSkipButton(getResources().getColor(color));
+        setNextArrowColor(getResources().getColor(color));
+
     }
+
+
+
+
+
 
     @Override
     protected void onDonePressed(@Nullable Fragment currentFragment) {

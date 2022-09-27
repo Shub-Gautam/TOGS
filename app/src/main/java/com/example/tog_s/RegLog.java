@@ -10,5 +10,9 @@ public class RegLog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reg_log);
+
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().hide();
+        }
     }
 }
