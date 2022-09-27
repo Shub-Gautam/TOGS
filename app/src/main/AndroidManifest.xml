@@ -13,6 +13,20 @@
         android:theme="@style/Theme.TOGS"
         tools:targetApi="31">
         <activity
+            android:name=".login"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Register"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".RegLog"
             android:exported="false">
             <meta-data

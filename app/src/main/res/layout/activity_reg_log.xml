@@ -67,10 +67,10 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/joinbtn"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="150dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
@@ -85,49 +85,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <TextView
+        android:id="@+id/alreadymember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/ic_rank"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="108dp"
+        android:textColor="#53004E"
+        android:fontFamily="@font/msemibold"
+        android:text="Already a member ? Sign in here"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="28dp"
-        android:src="@drawable/ic_home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2" />
-
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginBottom="28dp"
-        android:src="@drawable/ic_location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2" />
-
-    <View
-        android:layout_width="6dp"
-        android:layout_height="6dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="52dp"
-        android:background="@drawable/bullet"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/joinbtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

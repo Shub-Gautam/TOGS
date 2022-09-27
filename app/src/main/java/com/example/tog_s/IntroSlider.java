@@ -13,6 +13,7 @@ import com.github.appintro.AppIntroFragment;
 
 public class IntroSlider extends AppIntro {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
