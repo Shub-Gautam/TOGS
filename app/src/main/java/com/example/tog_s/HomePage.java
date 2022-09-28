@@ -20,15 +20,15 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
-        String s1 = sh.getString("token", "");
+        String token = sh.getString("token", "");
 
         coordinatorLayout = findViewById(R.id.homepagesnack);
-
         Snackbar s = Snackbar.make(coordinatorLayout,"Logged in Successfully",Snackbar.LENGTH_LONG);
         s.show();
 
-        TextView valu = (TextView) findViewById(R.id.textView3);
-        valu.setText(s1);
+        TextView user_FullName = (TextView) findViewById(R.id.textView10);
+        TextView user_Position = (TextView) findViewById(R.id.textView10);
+
 
     }
 }
