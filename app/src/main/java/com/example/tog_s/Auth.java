@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -132,4 +133,58 @@ public class Auth {
 
                 }
     }
+
+    public void updateNamePos(String token, Context context, TextView userFullName, TextView userPosition, View view){
+        try{
+
+            userPosition.setText("Loading..");
+            userFullName.setText("Loading..");
+
+            String url = "https://attend-shubh.herokuapp.com/api/v1/auth/u";
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("token", token);
+            RequestBody body = RequestBody.create(jsonObject.toString(), JSON);
+
+            Request.Builder builder = new Request.Builder();
+            Request request = builder
+                    .url(url)
+                    .post(body)
+                    .build();
+
+            Call call = client.newCall(request);
+            Gson gson = new Gson();
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                    Snackbar snackbar = Snackbar.make(view,"Unable to send Request",Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+
+                @Override
+                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                    try{
+                        ResponseGetUser data = gson.fromJson(response.body().string(), ResponseGetUser.class);
+                        Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        userFullName.setText(data.getData().getUser().getName());
+                        String role = data.getData().getUser().getRole();
+                        String rol ;
+                        if(role.equals("s")) rol = "Student" ;
+                        else if(role.equals("a")) rol = "Admin";
+                        else if(role.equals("v")) rol = "Volunteer";
+                        else rol = "Not assigned yet";
+                        userPosition.setText(rol);
+                    }catch(Exception e){
+                        Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                }
+            });
+
+        }catch (Exception e){
+            Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+    }
+
 }

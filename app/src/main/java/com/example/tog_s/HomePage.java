@@ -27,8 +27,10 @@ public class HomePage extends AppCompatActivity {
         s.show();
 
         TextView user_FullName = (TextView) findViewById(R.id.textView10);
-        TextView user_Position = (TextView) findViewById(R.id.textView10);
+        TextView user_Position = (TextView) findViewById(R.id.textView12);
 
+        Auth auth = new Auth();
+        auth.updateNamePos(token,getApplicationContext(),user_FullName,user_Position,coordinatorLayout);
 
     }
 }
