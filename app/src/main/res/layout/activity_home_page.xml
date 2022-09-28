@@ -102,4 +102,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="169dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/mnm" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="85dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="65dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="28dp"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/corporateidentity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="63dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="28dp"
+        android:src="@drawable/qrcodescan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

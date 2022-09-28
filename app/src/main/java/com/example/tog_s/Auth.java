@@ -166,6 +166,10 @@ public class Auth {
                         ResponseGetUser data = gson.fromJson(response.body().string(), ResponseGetUser.class);
                         Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
                         snackbar.show();
+                        SharedPreferences sharedPreferences = context.getSharedPreferences("MySharedPref",MODE_PRIVATE);
+                        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+                        myEdit.putString("qrCode",data.getData().getUser().getQrlink());
+                        myEdit.commit();
                         userFullName.setText(data.getData().getUser().getName());
                         String role = data.getData().getUser().getRole();
                         String rol ;

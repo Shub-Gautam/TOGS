@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -28,6 +30,16 @@ public class HomePage extends AppCompatActivity {
 
         TextView user_FullName = (TextView) findViewById(R.id.textView10);
         TextView user_Position = (TextView) findViewById(R.id.textView12);
+
+        ImageView digitalCard = (ImageView) findViewById(R.id.imageView3);
+
+        digitalCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(),DigitalCard.class);
+                startActivity(myIntent);
+            }
+        });
 
         Auth auth = new Auth();
         auth.updateNamePos(token,getApplicationContext(),user_FullName,user_Position,coordinatorLayout);
