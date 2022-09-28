@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Register extends AppCompatActivity {
 
@@ -18,7 +19,14 @@ public class Register extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                EditText email = (EditText) findViewById(R.id.textInputEditTextRegisteremail);
+                EditText password = (EditText) findViewById(R.id.textInputEditTextRegistePassword);
+
                 Intent myIntent = new Intent(getApplicationContext(),RegisterSecond.class);
+                myIntent.putExtra("email",email.getText().toString());
+                myIntent.putExtra("password",password.getText().toString());
+
                 startActivity(myIntent);
             }
         });

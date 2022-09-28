@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditTextRegisterPassword"
+            android:id="@+id/textInputEditTextRegisteremail"
             android:layout_width="match_parent"
             android:layout_height="56dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditTextRegisterEmail"
+            android:id="@+id/textInputEditTextRegistePassword"
             android:layout_width="match_parent"
             android:layout_height="56dp" />
     </com.google.android.material.textfield.TextInputLayout>

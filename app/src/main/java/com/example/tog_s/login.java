@@ -1,9 +1,13 @@
 package com.example.tog_s;
 
+import static java.lang.Thread.sleep;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -18,19 +22,19 @@ public class login extends AppCompatActivity {
         EditText username = (EditText) findViewById(R.id.textInputEditText);
         EditText password = (EditText) findViewById(R.id.textInputEditText2);
 
-        Auth auth = new Auth();
-        int res = auth.getUser(username.getText().toString(),password.getText().toString());
+        Button loginBtn = (Button) findViewById(R.id.loginbtn);
 
-        Intent myIntent = new Intent(getApplicationContext(),HomePage.class);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Auth auth = new Auth();
+                Intent myIntent = new Intent(getApplicationContext(),HomePage.class);
 
-        if(res==1) {
-            myIntent.putExtra("LoginError",res);
-            startActivity(myIntent);
-        }
-        else{
-            myIntent.putExtra("LoginError",res);
-            startActivity(myIntent);
-        }
+                auth.getUser(username.getText().toString(),password.getText().toString(),username,getApplicationContext(),myIntent,view);
+
+            }
+        });
+
 
     }
 }
