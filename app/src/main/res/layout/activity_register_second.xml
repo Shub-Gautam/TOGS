@@ -57,7 +57,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextRegisterName"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +75,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextRegisterUsername"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:inputType="text"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -85,14 +88,15 @@
         android:layout_marginTop="44dp"
         android:hint="Phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister12">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextRegisterPhone"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -101,7 +105,7 @@
         android:layout_width="347dp"
         android:layout_height="64dp"
         android:layout_marginTop="44dp"
-        android:hint="DOB"
+        android:hint="MM/DD/YYYY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +114,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextRegisterDOB"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:editable="true"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -118,16 +124,18 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="347dp"
         android:layout_height="64dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:hint="gender"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister14">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextRegisterGender"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

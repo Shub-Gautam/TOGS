@@ -7,12 +7,18 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import java.io.InputStream;
+import java.net.URL;
 
 public class HomePage extends AppCompatActivity {
     ConstraintLayout coordinatorLayout;

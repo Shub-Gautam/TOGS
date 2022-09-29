@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        Auth auth = new Auth();
+        auth.test();
+
         Intent i =new Intent(getApplicationContext(),IntroSlider.class);
         startActivity(i);
 

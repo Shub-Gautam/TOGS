@@ -191,4 +191,29 @@ public class Auth {
         }
     }
 
+    public void test(){
+        try{
+
+            String url = "https://attend-shubh.herokuapp.com/test";
+            Request.Builder builder = new Request.Builder();
+            Request request = builder
+                    .url(url)
+                    .build();
+
+            Call call = client.newCall(request);
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                }
+
+                @Override
+                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                }
+            });
+
+        }catch (Exception e){
+
+        }
+    }
+
 }
