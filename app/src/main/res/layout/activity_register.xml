@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="313dp"
-        android:layout_height="257dp"
+        android:layout_width="281dp"
+        android:layout_height="232dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="8dp"
@@ -44,7 +44,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextRegisteremail"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +65,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextRegistePassword"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView

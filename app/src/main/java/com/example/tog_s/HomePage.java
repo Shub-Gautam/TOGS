@@ -22,6 +22,7 @@ import java.net.URL;
 
 public class HomePage extends AppCompatActivity {
     ConstraintLayout coordinatorLayout;
+    public static TextView user_Position ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +36,23 @@ public class HomePage extends AppCompatActivity {
         s.show();
 
         TextView user_FullName = (TextView) findViewById(R.id.textView10);
-        TextView user_Position = (TextView) findViewById(R.id.textView12);
+        user_Position = (TextView) findViewById(R.id.textView12);
 
         ImageView digitalCard = (ImageView) findViewById(R.id.imageView3);
+        ImageView classes = (ImageView) findViewById(R.id.imageView4);
 
         digitalCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(),DigitalCard.class);
+                startActivity(myIntent);
+            }
+        });
+
+        classes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(),Events.class);
                 startActivity(myIntent);
             }
         });

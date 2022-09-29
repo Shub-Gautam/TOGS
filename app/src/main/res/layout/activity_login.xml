@@ -82,7 +82,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -102,7 +103,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditText2"
             android:layout_width="match_parent"
-            android:layout_height="56dp" />
+            android:layout_height="56dp"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

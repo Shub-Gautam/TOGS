@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateEvent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldRegister9"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="152dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:hint="Venue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister29">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextCreateEventVenue"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldRegister3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="148dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="524dp"
+        android:hint="Event Type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextCreateEventEventType"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldRegister39"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="148dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:hint="Timings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister11">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextCreateEventTimings"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldRegister29"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="152dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:hint="Duration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/outlinedTextFieldRegister39"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister11">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextCreateEventDuration"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldRegister11"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="356dp"
+        android:layout_height="309dp"
+        android:layout_marginTop="104dp"
+        android:hint="Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextCreateEventDescription"
+            android:layout_width="match_parent"
+            android:layout_height="294dp"
+            android:singleLine="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldRegister19"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:hint="Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextCreateEventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/CreateEvent2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="201dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_btn_primary"
+        android:fontFamily="@font/msemibold"
+        android:text="Create Event"
+        android:textAllCaps="false"
+        android:textColor="#FFC736"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

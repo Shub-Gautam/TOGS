@@ -24,8 +24,8 @@ public class Register extends AppCompatActivity {
                 EditText password = (EditText) findViewById(R.id.textInputEditTextRegistePassword);
 
                 Intent myIntent = new Intent(getApplicationContext(),RegisterSecond.class);
-                myIntent.putExtra("email",email.getText().toString());
-                myIntent.putExtra("password",password.getText().toString());
+                myIntent.putExtra("email",email.getText().toString().trim());
+                myIntent.putExtra("password",password.getText().toString().trim());
 
                 startActivity(myIntent);
             }

@@ -23,10 +23,9 @@ public class RegisterSecond extends AppCompatActivity {
         setContentView(R.layout.activity_register_second);
 
         Intent myInt = getIntent();
-        String email = myInt.getStringExtra("email");
-        String password = myInt.getStringExtra("password");
 
-
+        String email = myInt.getStringExtra("email").trim();
+        String password = myInt.getStringExtra("password").trim();
         EditText name = (EditText) findViewById(R.id.textInputEditTextRegisterName);
         EditText username = (EditText) findViewById(R.id.textInputEditTextRegisterUsername);
         EditText phone = (EditText) findViewById(R.id.textInputEditTextRegisterPhone);
@@ -34,10 +33,18 @@ public class RegisterSecond extends AppCompatActivity {
         EditText gender = (EditText) findViewById(R.id.textInputEditTextRegisterGender);
         TextInputLayout dobview = (TextInputLayout) findViewById(R.id.outlinedTextFieldRegister14);
 
+        String nameStr = name.getText().toString();
+        String usernameStr = username.getText().toString();
+        String phoneStr = phone.getText().toString();
+        String dobStr = dob.getText().toString();
+        String genderStr = gender.getText().toString();
 
-        MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();
-        materialDateBuilder.setTitleText("SELECT A DATE");
-        final MaterialDatePicker materialDatePicker = materialDateBuilder.build();
+
+
+
+//        MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();
+//        materialDateBuilder.setTitleText("SELECT A DATE");
+//        final MaterialDatePicker materialDatePicker = materialDateBuilder.build();
 
 //        dob.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 //            @Override
@@ -71,10 +78,6 @@ public class RegisterSecond extends AppCompatActivity {
 //                dob.setText("");
 //            }
 //        });
-
-
-
-
 
 
         Button SignUp = (Button) findViewById(R.id.signUpNow);
