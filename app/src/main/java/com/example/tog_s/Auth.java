@@ -5,28 +5,29 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tog_s.response.RegisterResponse;
+import com.example.tog_s.card.CardAdapter;
+import com.example.tog_s.card.EventData;
+import com.example.tog_s.card.EventResponse;
+import com.example.tog_s.response.OneEventResponse;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.gson.JsonObject;
 import com.google.gson.*;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Map;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.Headers;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -281,7 +282,7 @@ public class Auth {
 
     }
 
-    public void markAttendance(String token, String studentId,String eventId, Context applicationContext, ConstraintLayout constraintLayout,View view,Intent myIntent) {
+    public void markAttendance(String token, String studentId,String eventId, Context applicationContext,View view) {
 
         try{
 
@@ -313,20 +314,8 @@ public class Auth {
                         ResponseGetUser data = gson.fromJson(response.body().string(), ResponseGetUser.class);
                         Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
                         snackbar.show();
-//                    SharedPreferences sharedPreferences = applicationContext.getSharedPreferences("MySharedPref",MODE_PRIVATE);
-//                    SharedPreferences.Editor myEdit = sharedPreferences.edit();
-//                    myEdit.putString("qrCode",data.getData().getUser().getQrlink());
-//                    myEdit.commit();
-//                    userFullName.setText(data.getData().getUser().getName());
-//                    String role = data.getData().getUser().getRole();
-//                    String rol ;
-//                    if(role.equals("s")) rol = "Student" ;
-//                    else if(role.equals("a")) rol = "Admin";
-//                    else if(role.equals("v")) rol = "Volunteer";
-//                    else rol = "Not assigned yet";
-//                    userPosition.setText(rol);
-                        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        applicationContext.startActivity(myIntent);
+//                        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        applicationContext.startActivity(myIntent);
                     }catch(Exception e){
                         Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
                         snackbar.show();
@@ -340,5 +329,118 @@ public class Auth {
         }
 
     }
+
+    public void getEventDetails(String token, Button dynamicBtn, String eventId, TextView title, TextView description, TextView timings, TextView venue, TextView duration, TextView eventType, View view){
+
+        title.setText("Loading..");
+        description.setText("Loading..");
+        timings.setText("Loading..");
+        venue.setText("Loading..");
+        duration.setText("Loading..");
+        eventType.setText("Loading..");
+
+
+        try{
+            String url = "https://attend-shubh.herokuapp.com/api/v1/class/fetch/event";
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("token",token);
+            jsonObject.put("eventId", eventId);
+            RequestBody body = RequestBody.create(jsonObject.toString(), JSON);
+
+            Request.Builder builder = new Request.Builder();
+            Request request = builder
+                    .url(url)
+                    .post(body)
+                    .build();
+
+            Call call = client.newCall(request);
+            Gson gson = new Gson();
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                    Snackbar snackbar = Snackbar.make(view,"Unable to send Request",Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+
+                @Override
+                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                    try{
+                        OneEventResponse data = gson.fromJson(response.body().string(), OneEventResponse.class);
+                        Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
+                        snackbar.show();
+
+
+
+                        title.setText(data.getData().getEventData().getTitle());
+                        description.setText(data.getData().getEventData().getDescription());
+                        timings.setText(data.getData().getEventData().getTimings());
+                        venue.setText(data.getData().getEventData().getVenue());
+                        duration.setText(data.getData().getEventData().getDuration());
+                        eventType.setText(data.getData().getEventData().getEventType());
+
+//                        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        applicationContext.startActivity(myIntent);
+                    }catch(Exception e){
+                        Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                }
+            });
+
+        }catch (Exception e){
+            Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+    }
+
+    public void getAdminEvents(String token, View view, RecyclerView recview, List<EventData> eventsData, CardAdapter.onEventListner ct){
+
+        try{
+            String url = "https://attend-shubh.herokuapp.com/api/v1/class/fetch/events";
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("token",token);
+            RequestBody body = RequestBody.create(jsonObject.toString(), JSON);
+
+            Request.Builder builder = new Request.Builder();
+            Request request = builder
+                    .url(url)
+                    .post(body)
+                    .build();
+
+            Call call = client.newCall(request);
+            Gson gson = new Gson();
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                    Snackbar snackbar = Snackbar.make(view,"Unable to send Request",Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+
+                @Override
+                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                    try{
+                        EventResponse data = gson.fromJson(response.body().string(), EventResponse.class);
+                        Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        List<EventData> ed = data.getData().getEventData();
+                        for (int i = 0; i < data.getData().getEventData().size(); i++) {
+                            eventsData.add(data.getData().getEventData().get(i));
+                        }
+//                        eventDataList = data.getData().getEventData();
+                        CardAdapter cardAdapter = new CardAdapter(data.getData().getEventData(),ct);
+                        recview.setAdapter(cardAdapter);
+                    }catch(Exception e){
+                        Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                }
+            });
+
+        }catch (Exception e){
+            Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+    }
+
 
 }

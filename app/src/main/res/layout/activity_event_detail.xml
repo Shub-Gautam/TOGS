@@ -4,6 +4,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/eventdetails"
     tools:context=".EventDetail">
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="413dp"
+        android:layout_height="165dp"
+        android:background="@drawable/bg_header_custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dynamicbtn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="234dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/bg_btn_primary"
+        android:fontFamily="@font/msemibold"
+        android:text="Mark Attandence"
+        android:textAllCaps="false"
+        android:textColor="#FFC736"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="231dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Duration"
+        android:textAlignment="viewEnd"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="233dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Event Type"
+        android:textAlignment="viewEnd"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="92dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Duration:"
+        android:textAlignment="viewStart"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="101dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="EventType:"
+        android:textAlignment="viewStart"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="277dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Title"
+        android:textAlignment="center"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="352dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/merri"
+        android:text="Event Details"
+        android:textAlignment="center"
+        android:textColor="#53004E"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Timings:"
+        android:textAlignment="viewStart"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="60dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Venue:"
+        android:textAlignment="viewStart"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="233dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Timings"
+        android:textAlignment="viewEnd"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="231dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Venue"
+        android:textAlignment="viewEnd"
+        android:textColor="#222020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="365dp"
+        android:layout_height="306dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/mregular"
+        android:lineSpacingExtra="8dp"
+        android:text="Description"
+        android:textAlignment="viewStart"
+        android:textColor="#222020"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        app:layout_wrapBehaviorInParent="vertical_only" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,6 +62,12 @@ public class QRScanner extends AppCompatActivity implements ZXingScannerView.Res
     public void handleResult(Result rawResult) {
 //        HomePage.user_Position.setText(rawResult.getText());
 //        Snackbar snackbar = Snackbar.make(context,rawResult.getText());
+        Auth auth = new Auth();
+        Intent da = getIntent();
+        String eventId = da.getStringExtra("eventId");
+        String token = da.getStringExtra("token");
+
+        auth.markAttendance(token, rawResult.getText().toString(),eventId,getApplicationContext(),findViewById(R.id.qrscanid));
         onBackPressed();
     }
 
