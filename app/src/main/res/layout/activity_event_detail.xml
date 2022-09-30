@@ -19,21 +19,36 @@
     <Button
         android:id="@+id/dynamicbtn"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="234dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="184dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/bg_btn_primary"
         android:fontFamily="@font/msemibold"
-        android:text="Mark Attandence"
+        android:text="Mark   Attandence"
+        android:textAllCaps="false"
+        android:textColor="#FFC736"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/dynamicbtn9"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="174dp"
+        android:layout_height="78dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_btn_primary"
+        android:fontFamily="@font/msemibold"
+        android:text="View Attendance"
         android:textAllCaps="false"
         android:textColor="#FFC736"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toEndOf="@+id/dynamicbtn" />
 
     <TextView
         android:id="@+id/textView27"
@@ -112,8 +127,8 @@
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="352dp"
-        android:layout_height="41dp"
+        android:layout_width="296dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
@@ -188,8 +203,8 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="365dp"
-        android:layout_height="306dp"
+        android:layout_width="356dp"
+        android:layout_height="259dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/mregular"
         android:lineSpacingExtra="8dp"

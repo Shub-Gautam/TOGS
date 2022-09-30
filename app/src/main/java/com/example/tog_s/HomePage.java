@@ -40,11 +40,21 @@ public class HomePage extends AppCompatActivity {
 
         ImageView digitalCard = (ImageView) findViewById(R.id.imageView3);
         ImageView classes = (ImageView) findViewById(R.id.imageView4);
+        ImageView menu = (ImageView) findViewById(R.id.imageView2);
+
 
         digitalCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(),DigitalCard.class);
+                startActivity(myIntent);
+            }
+        });
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(),menu.class);
                 startActivity(myIntent);
             }
         });
@@ -56,6 +66,8 @@ public class HomePage extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
+
 
         Auth auth = new Auth();
         auth.updateNamePos(token,getApplicationContext(),user_FullName,user_Position,coordinatorLayout);

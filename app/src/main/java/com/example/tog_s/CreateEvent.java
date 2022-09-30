@@ -20,24 +20,26 @@ public class CreateEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
-        EditText title = (EditText) findViewById(R.id.textInputEditTextCreateEventTitle);
-        EditText description = (EditText) findViewById(R.id.textInputEditTextCreateEventDescription);
-        EditText timings = (EditText) findViewById(R.id.textInputEditTextCreateEventTimings);
-        EditText duration = (EditText) findViewById(R.id.textInputEditTextCreateEventDuration);
-        EditText eventType = (EditText) findViewById(R.id.textInputEditTextCreateEventEventType);
-        EditText venue = (EditText) findViewById(R.id.textInputEditTextCreateEventVenue);
-
         SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         String token = sh.getString("token", "");
 
         Button finalCreateEvent  = (Button) findViewById(R.id.CreateEvent2);
 
         finalCreateEvent.setOnClickListener(new View.OnClickListener() {
+
+
+            EditText title = (EditText) findViewById(R.id.textInputEditTextCreateEventTitle);
+            EditText description = (EditText) findViewById(R.id.textInputEditTextCreateEventDescription);
+            EditText timings = (EditText) findViewById(R.id.textInputEditTextCreateEventTimings);
+            EditText duration = (EditText) findViewById(R.id.textInputEditTextCreateEventDuration);
+            EditText eventType = (EditText) findViewById(R.id.textInputEditTextCreateEventEventType);
+            EditText venue = (EditText) findViewById(R.id.textInputEditTextCreateEventVenue);
             @Override
             public void onClick(View view) {
+                View view1 = findViewById(R.id.menuid);
                 Auth auth = new Auth();
-                Intent myIntent = new Intent(getApplicationContext(),Events.class);
-                auth.createEvent(token,title.getText().toString(),description.getText().toString(),timings.getText().toString(),duration.getText().toString(),eventType.getText().toString(),venue.getText().toString(),getApplicationContext(),constraintLayout,view,myIntent);
+                Intent myIntent = new Intent(getApplicationContext(),HomePage.class);
+                auth.createEvent(description,token,title.getText().toString(),description.getText().toString(),timings.getText().toString(),duration.getText().toString(),eventType.getText().toString(),venue.getText().toString(),getApplicationContext(),constraintLayout,view,myIntent);
             }
         });
 
