@@ -6,4 +6,8 @@
     <string name="title_activity_log_res">LogRes</string>
     <string name="Password" />
     <string name="Password1">Password</string>
+        <string-array name="demo">
+            <item>class</item>
+            <item>event</item>
+        </string-array>
 </resources>

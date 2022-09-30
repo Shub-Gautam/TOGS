@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/simple_spinner_item"
     tools:context=".CreateEvent">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -19,24 +20,6 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextCreateEventVenue"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:singleLine="true" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextFieldRegister3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="148dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="524dp"
-        android:hint="Event Type"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditTextCreateEventEventType"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:singleLine="true" />
@@ -134,4 +117,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="146dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister39" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
