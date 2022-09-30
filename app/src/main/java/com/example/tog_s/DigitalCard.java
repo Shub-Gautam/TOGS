@@ -37,9 +37,25 @@ public class DigitalCard extends AppCompatActivity {
 
         constraintLayout = findViewById(R.id.digitalcardid);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+        String name = sharedPreferences.getString("namemain","");
+        String rol = sharedPreferences.getString("rolemain","");
         Auth auth = new Auth();
-        auth.updateNamePos(token,getApplicationContext(),userFullName,userPosition,constraintLayout);
+        String role ;
 
+
+
+
+        if(name.length()<5){
+            auth.updateNamePos(token,getApplicationContext(),userFullName,userPosition,constraintLayout);
+        }else{
+            userFullName.setText(name);
+            if(rol.equals("s")) role = "Student" ;
+            else if(rol.equals("a")) role = "Admin";
+            else if(rol.equals("v")) role = "Volunteer";
+            else role = "Not assigned yet";
+            userPosition.setText(role);
+        }
 //        Update QR Code here
         try{
             Snackbar snackbar2 = Snackbar.make(constraintLayout,"Wating for QR Code",Snackbar.LENGTH_LONG);

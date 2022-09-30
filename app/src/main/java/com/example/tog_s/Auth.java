@@ -174,6 +174,8 @@ public class Auth {
                         SharedPreferences sharedPreferences = context.getSharedPreferences("MySharedPref",MODE_PRIVATE);
                         SharedPreferences.Editor myEdit = sharedPreferences.edit();
                         myEdit.putString("qrCode",data.getData().getUser().getQrlink());
+                        myEdit.putString("namemain",data.getData().getUser().getName());
+                        myEdit.putString("rolemain",data.getData().getUser().getRole());
                         myEdit.commit();
                         userFullName.setText(data.getData().getUser().getName());
                         String role = data.getData().getUser().getRole();
@@ -434,7 +436,7 @@ public class Auth {
         }
     }
 
-    public void donateFunds(String token, View view,int amount, String note,Context getApplication,Intent myIntent){
+    public void donateFunds(String token, View view,String amount, String note,Context getApplication,String tranactID){
 
         try{
             String url = "https://attend-shubh.herokuapp.com/api/v1/fund/donate";
@@ -442,6 +444,7 @@ public class Auth {
             jsonObject.put("token",token);
             jsonObject.put("amount",amount);
             jsonObject.put("note",note);
+            jsonObject.put("transactionId",tranactID);
             RequestBody body = RequestBody.create(jsonObject.toString(), JSON);
 
             Request.Builder builder = new Request.Builder();
@@ -462,15 +465,6 @@ public class Auth {
                 @Override
                 public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                     try{
-//                        EventResponse data = gson.fromJson(response.body().string(), EventResponse.class);
-//                        Snackbar snackbar = Snackbar.make(view,"Donation successfull",Snackbar.LENGTH_LONG);
-//                        snackbar.show();
-
-
-//                        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                        getApplication.startActivity(myIntent);
-
-
                     }catch(Exception e){
                         Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
                         snackbar.show();

@@ -4,4 +4,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_log_res">LogRes</string>
+    <string name="Password" />
+    <string name="Password1">Password</string>
 </resources>

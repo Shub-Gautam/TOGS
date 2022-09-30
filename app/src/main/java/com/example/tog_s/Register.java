@@ -21,7 +21,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
 
                 EditText email = (EditText) findViewById(R.id.textInputEditTextRegisteremail);
-                EditText password = (EditText) findViewById(R.id.textInputEditTextRegistePassword);
+                EditText password = (EditText) findViewById(R.id.editTextTextPassword2);
 
                 Intent myIntent = new Intent(getApplicationContext(),RegisterSecond.class);
                 myIntent.putExtra("email",email.getText().toString().trim());

@@ -44,6 +44,7 @@ dependencies {
     implementation 'com.github.AppIntro:AppIntro:6.2.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+    implementation 'dev.shreyaspatil.EasyUpiPayment:EasyUpiPayment:3.0.3'
     testImplementation 'junit:junit:4.13.2'
     implementation 'com.karumi:dexter:6.2.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

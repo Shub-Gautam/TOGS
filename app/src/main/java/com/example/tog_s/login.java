@@ -20,7 +20,7 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         EditText username = (EditText) findViewById(R.id.textInputEditText);
-        EditText password = (EditText) findViewById(R.id.textInputEditText2);
+        EditText password = (EditText) findViewById(R.id.editTextTextPassword);
 
         Button loginBtn = (Button) findViewById(R.id.loginbtn);
 

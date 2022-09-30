@@ -92,7 +92,6 @@
         android:layout_width="347dp"
         android:layout_height="64dp"
         android:layout_marginBottom="44dp"
-        android:hint="Password"
         app:layout_constraintBottom_toTopOf="@+id/loginbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
@@ -100,11 +99,14 @@
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextField"
         app:layout_constraintVertical_bias="0.412">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText2"
+        <EditText
+            android:id="@+id/editTextTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:singleLine="true" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/Password1"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

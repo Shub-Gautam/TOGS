@@ -31,37 +31,47 @@ public class EventDetail extends AppCompatActivity {
 
         SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         String token = sh.getString("token", "");
+        String role = sh.getString("rolemain", "");
 
         Intent myIntent = getIntent();
         String eventId = myIntent.getStringExtra("eventId");
 
 //        String eventId = "63359a86565ef2399319745c";
 //        view = findViewById(R.id.eventdetails);
-
         Auth auth = new Auth();
-        auth.getEventDetails(token,dynamicBtn,eventId,title,description,timings,venue,duration,eventType,findViewById(R.id.eventdetails));
+
+        if(role.equals("a")){
+
+            auth.getEventDetails(token,dynamicBtn,eventId,title,description,timings,venue,duration,eventType,findViewById(R.id.eventdetails));
+
+            dynamicBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent scan = new Intent(getApplicationContext(),QRScanner.class);
+                    scan.putExtra("eventId",eventId);
+                    scan.putExtra("token",token);
+                    startActivity(scan);
+                }
+            });
 
 
-        dynamicBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent scan = new Intent(getApplicationContext(),QRScanner.class);
-                scan.putExtra("eventId",eventId);
-                scan.putExtra("token",token);
-                startActivity(scan);
-            }
-        });
+            viewAttendence.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent scan = new Intent(getApplicationContext(),Attendance.class);
+                    scan.putExtra("eventId",eventId);
+                    scan.putExtra("token",token);
+                    startActivity(scan);
+                }
+            });
+        }else{
+
+            dynamicBtn.setVisibility(View.GONE);
+//            viewAttendence.setVisibility(View.GONE);
+        }
 
 
-        viewAttendence.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent scan = new Intent(getApplicationContext(),Attendance.class);
-                scan.putExtra("eventId",eventId);
-                scan.putExtra("token",token);
-                startActivity(scan);
-            }
-        });
+
 
 
 
