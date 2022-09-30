@@ -27,6 +27,7 @@ public class EventDetail extends AppCompatActivity {
         TextView eventType = (TextView) findViewById(R.id.textView24);
 
         Button dynamicBtn = (Button) findViewById(R.id.dynamicbtn);
+        Button viewAttendence = (Button) findViewById(R.id.dynamicbtn9);
 
         SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         String token = sh.getString("token", "");
@@ -35,7 +36,6 @@ public class EventDetail extends AppCompatActivity {
         String eventId = myIntent.getStringExtra("eventId");
 
 //        String eventId = "63359a86565ef2399319745c";
-
 //        view = findViewById(R.id.eventdetails);
 
         Auth auth = new Auth();
@@ -51,5 +51,19 @@ public class EventDetail extends AppCompatActivity {
                 startActivity(scan);
             }
         });
+
+
+        viewAttendence.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent scan = new Intent(getApplicationContext(),Attendance.class);
+                scan.putExtra("eventId",eventId);
+                scan.putExtra("token",token);
+                startActivity(scan);
+            }
+        });
+
+
+
     }
 }

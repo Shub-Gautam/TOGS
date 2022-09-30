@@ -122,13 +122,16 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="179dp"
-        android:layout_height="250dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        android:layout_width="193dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/mnm" />
+        app:layout_constraintTop_toBottomOf="@+id/textView29"
+        app:layout_constraintVertical_bias="0.342"
+        app:srcCompat="@drawable/ngoooi" />
 
     <ImageView
         android:id="@+id/imageView2"

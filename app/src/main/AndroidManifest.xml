@@ -16,6 +16,13 @@
         android:theme="@style/Theme.TOGS"
         tools:targetApi="31">
         <activity
+            android:name=".Attendance"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Donate"
             android:exported="false">
             <meta-data

@@ -14,10 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tog_s.card.AttendanceAdapter;
 import com.example.tog_s.card.CardAdapter;
 import com.example.tog_s.card.EventData;
 import com.example.tog_s.card.EventResponse;
+import com.example.tog_s.response.Attendance;
 import com.example.tog_s.response.OneEventResponse;
+import com.example.tog_s.response.ResponseAttendance;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.*;
 
@@ -523,12 +526,13 @@ public class Auth {
         }
     }
 
-    public void getAttendace(String token,String eventId, View view){
+    public void getAttendace(String token,String eventId, View view,Context applicationContext,RecyclerView recview){
 
         try{
-            String url = "https://attend-shubh.herokuapp.com/api/v1/class/attendance/";
+            String url = "https://attend-shubh.herokuapp.com/api/v1/class/fetch/attendance";
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("token",token);
+            jsonObject.put("eventId",eventId);
             RequestBody body = RequestBody.create(jsonObject.toString(), JSON);
 
             Request.Builder builder = new Request.Builder();
@@ -552,6 +556,18 @@ public class Auth {
 //                        EventResponse data = gson.fromJson(response.body().string(), EventResponse.class);
 //                        Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
 //                        snackbar.show();
+
+                        ResponseAttendance data = gson.fromJson(response.body().string(), ResponseAttendance.class);
+                        Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        List<Attendance> ed = data.getData().getAttendence();
+//                        for (int i = 0; i < data.getData().getAttendence().size(); i++) {
+//                            eventsData.add(data.getData().getEventData().get(i));
+//                        }
+//                        eventDataList = data.getData().getEventData();
+                        AttendanceAdapter attendanceAdapter = new AttendanceAdapter(data.getData().getAttendence());
+                        recview.setAdapter(attendanceAdapter);
+
                     }catch(Exception e){
                         Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
                         snackbar.show();
