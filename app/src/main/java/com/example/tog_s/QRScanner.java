@@ -66,9 +66,14 @@ public class QRScanner extends AppCompatActivity implements ZXingScannerView.Res
         Intent da = getIntent();
         String eventId = da.getStringExtra("eventId");
         String token = da.getStringExtra("token");
+        String marJao = "ee2";
 
-        auth.markAttendance(token, rawResult.getText().toString(),eventId,getApplicationContext(),findViewById(R.id.qrscanid));
-        onBackPressed();
+        Intent back = new Intent(getApplicationContext(),EventDetail.class);
+        back.putExtra("eventId",eventId);
+        back.putExtra("token",token);
+
+        auth.markAttendance(token, rawResult.getText().toString(),eventId,getApplicationContext(),findViewById(R.id.qrscanid),back);
+//        onBackPressed();
     }
 
     @Override

@@ -282,7 +282,7 @@ public class Auth {
 
     }
 
-    public void markAttendance(String token, String studentId,String eventId, Context applicationContext,View view) {
+    public void markAttendance(String token, String studentId, String eventId, Context applicationContext, View view, Intent da) {
 
         try{
 
@@ -314,8 +314,8 @@ public class Auth {
                         ResponseGetUser data = gson.fromJson(response.body().string(), ResponseGetUser.class);
                         Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
                         snackbar.show();
-//                        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                        applicationContext.startActivity(myIntent);
+                        da.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        applicationContext.startActivity(da);
                     }catch(Exception e){
                         Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
                         snackbar.show();
