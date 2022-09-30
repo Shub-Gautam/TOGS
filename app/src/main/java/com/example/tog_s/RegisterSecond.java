@@ -10,6 +10,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.textfield.TextInputLayout;
@@ -30,14 +34,41 @@ public class RegisterSecond extends AppCompatActivity {
         EditText username = (EditText) findViewById(R.id.textInputEditTextRegisterUsername);
         EditText phone = (EditText) findViewById(R.id.textInputEditTextRegisterPhone);
         EditText dob = (EditText) findViewById(R.id.textInputEditTextRegisterDOB);
-        EditText gender = (EditText) findViewById(R.id.textInputEditTextRegisterGender);
+        RadioGroup gender = (RadioGroup) findViewById(R.id.gender);
         TextInputLayout dobview = (TextInputLayout) findViewById(R.id.outlinedTextFieldRegister14);
+
+        String selectedText;
+        int radioButtonId = gender.getCheckedRadioButtonId();
+        switch (radioButtonId){
+            case R.id.male: {
+                selectedText = "m";
+                break;
+            }
+            case R.id.female: {
+                selectedText = "f" ;
+            break;
+            }
+            default:{
+                selectedText = "m" ;
+                break;
+            }
+        }
+//        String rb = ((RadioButton)findViewById(gender.getCheckedRadioButtonId())).toString();
+
+//        Toast.makeText(this, selectedText, Toast.LENGTH_SHORT).show();
+
+        String genderStr ;
+//        if(selectedText.equals("female")||selectedText.equals("Female")){
+//            genderStr = "f";
+//        }else{
+//            genderStr = "m";
+//        }
+
 
         String nameStr = name.getText().toString();
         String usernameStr = username.getText().toString();
         String phoneStr = phone.getText().toString();
         String dobStr = dob.getText().toString();
-        String genderStr = gender.getText().toString();
 
 
 
@@ -89,7 +120,7 @@ public class RegisterSecond extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),HomePage.class);
 
                 Auth auth = new Auth();
-                auth.registerUser(name,email,name.getText().toString(),username.getText().toString(),password,phone.getText().toString(),dob.getText().toString(),gender.getText().toString(),getApplicationContext(),intent,view);
+                auth.registerUser(name,email,name.getText().toString(),username.getText().toString(),password,phone.getText().toString(),dob.getText().toString(),selectedText,getApplicationContext(),intent,view);
             }
         });
 

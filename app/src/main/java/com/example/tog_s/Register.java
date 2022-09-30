@@ -19,7 +19,6 @@ public class Register extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 EditText email = (EditText) findViewById(R.id.textInputEditTextRegisteremail);
                 EditText password = (EditText) findViewById(R.id.editTextTextPassword2);
 

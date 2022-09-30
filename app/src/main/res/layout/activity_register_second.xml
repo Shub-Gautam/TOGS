@@ -39,9 +39,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister15"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextFieldRegister12"
@@ -119,23 +117,27 @@
             android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextFieldRegister15"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="347dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="36dp"
-        android:hint="gender"
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="343dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldRegister14">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditTextRegisterGender"
+        <RadioButton
+            android:id="@+id/male"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:singleLine="true" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Female" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

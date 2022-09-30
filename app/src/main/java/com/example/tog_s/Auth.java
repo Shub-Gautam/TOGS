@@ -306,10 +306,10 @@ public class Auth {
                 public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                     try{
                         ResponseGetUser data = gson.fromJson(response.body().string(), ResponseGetUser.class);
-                        Snackbar snackbar = Snackbar.make(view,data.getMessage(),Snackbar.LENGTH_LONG);
+                        Snackbar snackbar = Snackbar.make(view,"Attendance Marked",Snackbar.LENGTH_LONG);
                         snackbar.show();
-                        da.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        applicationContext.startActivity(da);
+//                        da.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        applicationContext.startActivity(da);
                     }catch(Exception e){
                         Snackbar snackbar = Snackbar.make(view,e.toString(),Snackbar.LENGTH_LONG);
                         snackbar.show();
